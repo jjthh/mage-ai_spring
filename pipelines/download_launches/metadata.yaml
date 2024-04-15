@@ -1,0 +1,74 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - transform_get_pictures
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: download_launches
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: download_launches
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - export_launch_rocket_data
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: transform_get_pictures
+  retry_config: null
+  status: updated
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - download_launches
+  uuid: transform_get_pictures
+- all_upstream_blocks_executed: false
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: export_launch rocket_data
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - transform_get_pictures
+  uuid: export_launch_rocket_data
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-04-02 05:36:19.044123+00:00'
+data_integration: null
+description: Fetch and Save  roxke launches
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: download_launches
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: download_launches
+variables_dir: "C:\\Users\\\uC870\uC0C1\uAD6C/.mage_data\\spring"
+widgets: []
